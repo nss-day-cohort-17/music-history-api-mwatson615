@@ -1,5 +1,5 @@
 // <Setup the configuration module for knex and bookshelf>
-const environment = process.env.NODE_ENV || 'devlopment';
+const environment = process.env.NODE_ENV || 'development';
 const config = require('../knexfile.js')[environment];
 const knex = require('knex')(config);
 const bookshelf = require('bookshelf')(knex);
