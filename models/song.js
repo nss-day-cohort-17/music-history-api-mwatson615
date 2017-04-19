@@ -8,6 +8,7 @@ const Song = bookshelf.Model.extend({
 },
 {
 	getAllSongs: function() {
+		console.log('Get all songs model')
 		return this.forge()
 		.fetchAll()
 		.then( (rows) => {
@@ -18,6 +19,7 @@ const Song = bookshelf.Model.extend({
 		})
 	},
 	getOneSong: function(songId) {
+		console.log('get one song model')
 		return this.forge({songId})
 		.fetch()
 		.then( (song) => {
