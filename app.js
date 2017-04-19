@@ -21,8 +21,17 @@ app.use(function(req, res, next) {
 	next(err);
 })
 
+
 // <Handle any errors that occur in the routing with error handlers defined at the bottom of our 
 // middleware stack>
+
+app.use( (err, req, res, next) => {
+	res.status(err.status || 500);
+	res.json({
+		message: err.message,
+		error: {}
+	})
+})
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
